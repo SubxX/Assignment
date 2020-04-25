@@ -76,7 +76,7 @@ export class FormComponent implements OnInit, OnChanges {
 
   enterKeyUp(e) {
     if (e.keyCode === 13 && this.userForm.status === 'VALID') {
-      this.addFnc();
+      this.isEdit ? this.editFunc() : this.addFnc();
     } else {
       return false;
     }
