@@ -1,0 +1,73 @@
+<div class="form-holder">
+
+  <form [formGroup]="userForm" (keyup)="enterKeyUp($event)">
+    <div class="name">
+      <div class="position-relative">
+        <input type="text" placeholder="Enter Your Name *" formControlName="name" />
+        <i class="io-icon far fa-user"></i>
+      </div>
+      <small *ngIf="userForm.controls.name.touched && userForm.controls.name.errors?.required"
+        class="invalid-err text-danger d-block">
+        this field is required *
+      </small>
+    </div>
+
+    <div class="email">
+      <div class="position-relative">
+        <input type="text" placeholder="Enter Your Email *" formControlName="email" />
+        <i class="io-icon far fa-envelope"></i>
+      </div>
+      <small *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.required"
+        class="invalid-err text-danger d-block">
+        this field is required *</small>
+      <small *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.email"
+        class="invalid-err text-danger d-block">
+        Please enter a valid email *
+      </small>
+    </div>
+
+    <div class="age">
+      <div class="position-relative">
+        <input type="text" placeholder="Enter Your Age *" formControlName="age" />
+        <i class="io-icon fas fa-calendar-week"></i>
+      </div>
+      <small *ngIf="userForm.controls.age.touched && userForm.controls.age.errors?.required"
+        class="invalid-err text-danger d-block">
+        this field is required *
+      </small>
+      <small *ngIf="userForm.controls.age.touched && userForm.controls.age.errors?.pattern"
+        class="invalid-err text-danger d-block">
+        Field must be a number *
+      </small>
+    </div>
+
+    <div class="med">
+      <div class="position-relative">
+        <input type="text" placeholder="Enter Medicine *" formControlName="med" />
+        <i class="io-icon fas fa-pills"></i>
+      </div>
+      <small *ngIf="userForm.controls.med.touched && userForm.controls.med.errors?.required"
+        class="invalid-err text-danger d-block">
+        this field is required *
+      </small>
+    </div>
+
+    <div class="action d-flex align-items-start justify-content-center">
+
+      <button class="d-flex align-items-center justify-content-center" (click)="addFnc()" *ngIf="!isEdit"
+        [disabled]="this.userForm.status == 'INVALID'">
+        <i class="fas fa-plus-circle mr-1"></i>Add
+      </button>
+
+      <button *ngIf="isEdit" class="d-flex align-items-center justify-content-center" (click)="editFunc()">
+        <i class="fas fa-edit mr-1"></i>Update
+      </button>
+      <button *ngIf="isEdit" class="d-flex align-items-center justify-content-center" (click)="clearFields()">
+        <i class="far fa-times-circle mr-1"></i>Clear
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

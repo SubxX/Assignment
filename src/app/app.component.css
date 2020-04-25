@@ -1,0 +1,91 @@
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.table {
+  margin: 30px 0;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table .inner {
+  max-height: 50vh;
+  overflow: auto;
+  position: relative;
+}
+
+.table .inner .table-head {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: sticky;
+  top: 0;
+}
+
+.table .inner .table-head div {
+  max-width: 100%;
+  min-width: 150px;
+  background: #333;
+  color: #fff;
+  padding: 7px 10px;
+}
+
+.table .inner .table-body {
+  border: 0 1px 1px 1px solid rgba(173, 173, 173, 0.226);
+}
+
+.table .inner .table-body .table-item {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.table .inner .table-body .table-item div {
+  max-width: 100%;
+  min-width: 150px;
+  padding: 10px;
+  background: #dadada;
+  word-break: break-word;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.287);
+}
+.table-item > div {
+  background: #dadada;
+  max-width: 100%;
+  min-width: 150px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.287);
+}
+
+.table-body .table-item:last-child > div {
+  border-bottom: none !important;
+}
+.table-item > div i {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.fas {
+  cursor: pointer;
+}
+.table-item > div i:nth-child(1):hover {
+  color: rgb(3, 167, 3);
+}
+.table-item > div i:nth-child(1).activeEditicn {
+  color: rgb(16, 212, 16);
+}
+.table-item > div i:last-child:hover {
+  color: red;
+}
+.inEditState {
+  background: rgba(51, 51, 51, 0.616) !important;
+  color: #fff;
+}
+.pointer-none {
+  pointer-events: none;
+}
+.sortToggle {
+  transform: rotate(180deg);
+}
+.fa-arrow-down {
+  transition: transform 0.2s;
+}

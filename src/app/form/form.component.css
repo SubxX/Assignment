@@ -1,0 +1,68 @@
+.form-holder form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 0.5fr;
+  grid-gap: 10px;
+}
+.form-holder form > div input {
+  border: none;
+  background: #dadada;
+  padding: 10px 10px 10px 40px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  transition: background 0.1s ease-in-out;
+}
+.form-holder form .io-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.form-holder form > div input:focus {
+  background: #cacacaca;
+}
+.action button {
+  border: none;
+  outline: none;
+  width: 100%;
+  min-height: 44px;
+  max-height: 100%;
+  background: none;
+  outline: none;
+  font-size: 20px;
+  transition: all 0.1s;
+  border-radius: 10px;
+}
+.action button:hover {
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.06);
+  background: rgba(51, 51, 51, 0.089);
+}
+.action button .fa-plus-circle,
+.fa-times-circle {
+  font-size: 30px;
+}
+
+@media (max-width: 800px) {
+  .form-holder form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .form-holder form {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.invalid-err {
+  animation: fade forwards 0.3s ease;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
